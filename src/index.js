@@ -15,18 +15,9 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
-  this.load.image("logo", logoImg);
+  this.load.atlas('robot', 'src/assets/robot.png', 'src/assets/robot.json');  
 }
 
 function create() {
-  const logo = this.add.image(400, 150, "logo");
-
-  this.tweens.add({
-    targets: logo,
-    y: 450,
-    duration: 2000,
-    ease: "Power2",
-    yoyo: true,
-    loop: -1
-  });
+  this.robot = this.add.sprite(300, 300, 'robot');
 }
